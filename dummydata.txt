@@ -1,0 +1,1 @@
+Object,Price Canvas,50 Paint,40
