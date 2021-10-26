@@ -5,19 +5,19 @@ app = QtWidgets.QApplication([])
 mainmenu = uic.loadUi("main.ui")
 calcform = uic.loadUi("calcform.ui")
 
-def profilebuttonclick():
+def profilebuttonclick():   #opens profile
     calcform.exec()
     calcform.show()
 
-def saveprofile():
+def saveprofile():                  #Saves profile
     calcform.label_2.setText(calcform.lineEdit.text())
     mainmenu.pushButton.setText(calcform.lineEdit.text())
 
-def backtoprofile():
+def backtoprofile():                                    #Back button functionality
     calcform.close()
     mainmenu.show()
 
-def calculateprofit():
+def calculateprofit():                                  #Calculation functionality
     row1 = int(calcform.quantity.text()) * int(calcform.price.text())
     row2 = int(calcform.quantity_2.text()) * int(calcform.price_2.text())
     row3 = int(calcform.quantity_3.text()) * int(calcform.price_3.text())
@@ -34,7 +34,7 @@ def calculateprofit():
     calcform.label_12.setText(result)
 
 
-def componententer(comp_number):
+def componententer(comp_number):                #Text box call functionality
 
     with open('dummydata.csv', 'rt')as f:
         data = csv.reader(f)
@@ -87,10 +87,7 @@ def componententer(comp_number):
     calcform.show()
 
 
-
-
-
-
+# Button Actions
 mainmenu.pushButton.clicked.connect(profilebuttonclick)
 mainmenu.pushButton_2.clicked.connect(profilebuttonclick)
 mainmenu.pushButton_3.clicked.connect(profilebuttonclick)
