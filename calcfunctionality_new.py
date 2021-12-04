@@ -35,7 +35,7 @@ def calculateprofit():                                  #Calculation functionali
 
 def populateFields(component_name, price_name):
 
-    with open('release/itemPrices.csv', 'r')as f:
+    with open('../pyqtcalc/Profit Calculator/dist/dist/release/itemPrices.csv', 'r')as f:
         data = csv.reader(f)
         entries = []
         for row in data:
@@ -48,7 +48,7 @@ def populateFields(component_name, price_name):
 
 def writeLinkToRow(component_name):
 
-    with open('release/itemPrices.csv', 'w', newline='')as f:
+    with open('../pyqtcalc/Profit Calculator/dist/dist/release/itemPrices.csv', 'w', newline='')as f:
         writer = csv.writer(f)
         writer.writerows([["items", "prices", "url"],["","",component_name.text()]])
     f.close()
@@ -98,6 +98,8 @@ def componententer(comp_number):                #Text box call functionality
         populateFields(calcform.component_10, calcform.price_10)
 
 
+    calcform.exec()
+    calcform.show()
 
 
 

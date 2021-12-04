@@ -16,7 +16,11 @@ def getAmazonPrice(list):
         try:
             row[1] = itemInfo.html.xpath('//*[@id="priceblock_ourprice"]', first=True).text
         except:
-            row[1] = "N/A"
+
+            try:
+                row[1] = itemInfo.html.xpath('(//span[@class="a-offscreen"])[1]', first=True).text
+            except:
+                row[1] = "N/A"
 
     # print(list)
 

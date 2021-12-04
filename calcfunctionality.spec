@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(['calcfunctionality.py'],
-             pathex=['C:\\Users\\tomvd\\Documents\\pyqtcalc'],
+             pathex=['C:\\Users\\tomvd\\Documents\\pyqtcalc\\Profit Calculator\\dist'],
              binaries=[],
              datas=[],
              hiddenimports=[],
